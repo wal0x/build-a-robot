@@ -1,4 +1,5 @@
 # build-a-robot
+This project is a practical example of using VueJS in a full project
 
 ## Project setup
 ```
