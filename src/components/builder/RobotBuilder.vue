@@ -57,6 +57,7 @@
 </template>
 <script>
 import availableParts from '../../data/parts';
+import createdHook from './createdHook.mixin';
 
 function getPreviousValidIndex(index, length) {
   const deprecatedIndex = index - 1;
@@ -69,6 +70,7 @@ function getNextValidIndex(index, length) {
 
 export default {
   name: 'RobotBuilder',
+  mixins: [createdHook],
   data() {
     return {
       availableParts,
