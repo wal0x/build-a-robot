@@ -2,7 +2,7 @@
   <div class="content">
     <button class="add-to-cart" @click="addToCart()">Add to card</button>
     <div class="top-row">
-      <div class="top part" :style="headBorderStyle">
+      <div :class="[saleBorderClass, 'top', 'part']">
         <div class="robot-name">
           {{selectedRobot.head.title}}
           <span class="sale" v-show="selectedRobot.head.onSale">Sale!</span>
@@ -94,6 +94,9 @@ export default {
       return {
         border: this.selectedRobot.head.onSale ? '3px solid red' : '3px solid #aaa',
       };
+    },
+    saleBorderClass() {
+      return this.selectedRobot.head.onSale ? 'sale-border' : '';
     },
   },
   methods: {
@@ -286,5 +289,8 @@ td,th {
 }
 .cost {
   text-align: right;
+}
+.sale-border {
+  border: solid 3px red;
 }
 </style>
